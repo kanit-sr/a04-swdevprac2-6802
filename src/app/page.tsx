@@ -1,95 +1,50 @@
-import Image from "next/image";
+import Banner from "@/components/Banner";
+import Card from "@/components/Card";
 import styles from "./page.module.css";
+
+const venues = [
+  {
+    imgSrc: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
+    imgAlt: "The Grand Hall",
+    name: "The Grand Hall",
+    description: "Elegant ballroom for weddings & galas, seating up to 500 guests.",
+  },
+  {
+    imgSrc: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80",
+    imgAlt: "Skyline Terrace",
+    name: "Skyline Terrace",
+    description: "Rooftop venue with panoramic city views, ideal for cocktail parties.",
+  },
+  {
+    imgSrc: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
+    imgAlt: "The Garden Pavilion",
+    name: "The Garden Pavilion",
+    description: "Lush outdoor setting surrounded by greenery, perfect for ceremonies.",
+  },
+  {
+    imgSrc: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+    imgAlt: "Crystal Conference Center",
+    name: "Crystal Conference Center",
+    description: "Modern conference halls equipped with the latest AV technology.",
+  },
+  {
+    imgSrc: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+    imgAlt: "The Rustic Barn",
+    name: "The Rustic Barn",
+    description: "Charming countryside barn venue with warm lighting and rustic decor.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main>
+      <Banner />
+      {/* แถวเลื่อนซ้าย-ขวา */}
+      <div className={styles.cardRow}>
+        {venues.map((venue) => (
+          <Card key={venue.name} {...venue} />
+        ))}
+      </div>
+    </main>
   );
 }

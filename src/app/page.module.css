@@ -1,3 +1,28 @@
+.cardRow {
+  /* แถวเลื่อนซ้าย-ขวา */
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2rem 2.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.cardRow > * {
+  scroll-snap-align: start;
+}
+
+.cardRow::-webkit-scrollbar {
+  height: 6px;
+}
+.cardRow::-webkit-scrollbar-track {
+  background: #37353e;
+}
+.cardRow::-webkit-scrollbar-thumb {
+  background: #715a5a;
+  border-radius: 3px;
+}
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
