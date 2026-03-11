@@ -38,3 +38,31 @@
   line-height: 1.6;
   margin: 0;
 }
+
+/* ---- Responsive ---- */
+
+/* Mobile: card แคบลงเพื่อให้เห็นว่ามี card ถัดไปอยู่ */
+@media (max-width: 640px) {
+  .card {
+    width: 200px;
+  }
+
+  .imageWrapper {
+    height: 130px;
+  }
+
+  .name {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card {
+    width: 230px;
+  }
+}

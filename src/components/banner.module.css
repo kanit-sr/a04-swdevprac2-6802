@@ -33,3 +33,28 @@
   text-transform: lowercase;
   padding: 0 1rem;
 }
+
+/* ---- Responsive ---- */
+
+/* Mobile: จอเล็กกว่า 640px */
+@media (max-width: 640px) {
+  .banner {
+    height: 260px;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Tablet: 641px – 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .banner {
+    height: 380px;
+  }
+
+  .tagline {
+    font-size: 2rem;
+  }
+}
