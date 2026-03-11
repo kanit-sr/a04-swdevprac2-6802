@@ -2,13 +2,18 @@ import Image from "next/image";
 import styles from "./card.module.css";
 
 interface CardProps {
-  imgSrc: string;
-  imgAlt: string;
-  name: string;
-  description: string;
+  imgSrc?: string;
+  imgAlt?: string;
+  name?: string;
+  description?: string;
 }
 
-export default function Card({ imgSrc, imgAlt, name, description }: CardProps) {
+export default function Card({
+  imgSrc = "/img/default.jpg",
+  imgAlt = "Card image",
+  name = "",
+  description = "",
+}: CardProps) {
   return (
     <div className={styles.card}>
       {/* รูปภาพด้านบน */}
