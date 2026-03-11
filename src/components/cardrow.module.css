@@ -1,0 +1,64 @@
+.section {
+  padding: 2rem 0;
+}
+
+.title {
+  color: #d3dad9;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0 4rem; /* เยื้องเท่ากับ padding ของ row เพื่อให้ตรงแนวกับ card แรก */
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.03em;
+}
+
+.wrapper {
+  /* วางปุ่มลูกศรซ้าย-ขวากับ row ให้อยู่แนวเดียวกัน */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.row {
+  /* แถว card ที่เลื่อนซ้าย-ขวาได้ */
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0.5rem 1rem;
+  flex: 1; /* ขยายเต็มพื้นที่ระหว่างปุ่ม */
+
+  /* ซ่อน scrollbar แต่ยังเลื่อนได้ */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE */
+}
+
+.row::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari */
+}
+
+.row > * {
+  scroll-snap-align: start;
+}
+
+.arrow {
+  /* ปุ่มลูกศร */
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #44444e;
+  color: #d3dad9;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.arrow:hover {
+  background-color: #715a5a;
+}
