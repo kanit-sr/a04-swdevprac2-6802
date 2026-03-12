@@ -8,8 +8,8 @@ interface CardProps {
 }
 
 export default function Card({
-  venueName = "Default Venue",
-  imgSrc = "/img/default.jpg",
+  venueName = "The Bloom Pavilion",
+  imgSrc = "/img/bloom.jpg",
 }: CardProps) {
   return (
     <div className="w-[300px] rounded-xl overflow-hidden shadow-lg bg-white">
