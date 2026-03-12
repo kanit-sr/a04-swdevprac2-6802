@@ -4,7 +4,7 @@ import TopMenuItem from "./TopMenuItem";
 export default function TopMenu() {
   return (
     <header className="w-full bg-[#37353e]/95 backdrop-blur-md border-b border-[#d3dad9]/10 shadow-md sticky top-0 z-50">
-      <nav className="mx-auto max-w-6xl h-16 px-8 flex items-center justify-end gap-8">
+      <nav className="w-full h-16 flex items-center justify-end gap-8" style={{ paddingRight: '3rem' }}>
 
         <div className="flex items-center">
           <TopMenuItem title="Booking" pageRef="/booking" />
