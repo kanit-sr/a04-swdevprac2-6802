@@ -1,22 +1,32 @@
 import Image from "next/image";
-import Link from "next/link";
 import TopMenuItem from "./TopMenuItem";
 
 export default function TopMenu() {
-return (
-<header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
-    <nav className="mx-auto max-w-6xl h-16 px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-            <Image src="/img/logo.png" alt="Venue Explorer Logo" width={40} height={40} priority />
-            <span className="text-lg font-semibold text-gray-800">Venue Explorer</span>
-            </Link>
+  return (
+    <header className="w-full bg-[#37353e]/95 backdrop-blur-md border-b border-[#d3dad9]/10 shadow-md sticky top-0 z-50">
+      <nav className="mx-auto max-w-6xl h-16 px-8 flex items-center justify-end gap-8">
 
-            <div className="flex items-center gap-6">
-            <TopMenuItem title="Home" pageRef="/" />
-            <TopMenuItem title="Booking" pageRef="/booking" />
-            <TopMenuItem title="About" pageRef="/about" />
+        <div className="flex items-center">
+          <TopMenuItem title="Booking" pageRef="/booking" />
         </div>
-    </nav>
-</header>
-);
+
+        <div className="flex items-center gap-2 pl-8 border-l border-[#d3dad9]/20">
+          <div className="rounded-full overflow-hidden ring-2 ring-[#d3dad9]/20 shadow-sm hover:ring-[#d3dad9]/50 transition-all duration-200">
+            <Image
+              src="/img/logo.png"
+              alt="Venue Explorer Logo"
+              width={36}
+              height={36}
+              priority
+              className="transition-transform duration-200 hover:scale-110"
+            />
+          </div>
+          <span className="text-base font-bold text-[#d3dad9] tracking-widest uppercase select-none">
+            Venue Explorer
+          </span>
+        </div>
+
+      </nav>
+    </header>
+  );
 }

@@ -1,13 +1,15 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import Banner from '@/components/Banner'
+import Card from '@/components/Card'
 
-describe('Banner', () => {
-  it('Banner contains image and text', () => {
-    render(<Banner/>)
-    const bannerImages = screen.queryAllByRole("img")
-    const bannerText = screen.getByText("where every event finds its venue")
-    expect(bannerImages).toHaveLength(1)
-    expect(bannerText).toBeInTheDocument
+describe('Card', () => {
+  it('Card contains correct image', () => {
+    const testSrc = "/img/bloom.jpg"
+    const testName = "The Bloom Pavilion"
+    render(<Card imgSrc={testSrc} venueName={testName} />)
+    const cardImages = screen.queryAllByRole("img")
+    const cardText = screen.getByText(new RegExp(testName, "i"))
+    expect(cardImages).toHaveLength(1)
+    expect(cardText).toBeInTheDocument
   })
 })
